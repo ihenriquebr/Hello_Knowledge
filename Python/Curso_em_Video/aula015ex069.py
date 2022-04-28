@@ -39,11 +39,15 @@ while True:
         else:
             sexo = 0
     # Continuar?
-    while True: # TODO terminar este while
-    ask = int(input(f'Deseja continuar?\n[{rd}0{cc}] para {rd}NÃO{cc} ou [{gn}1{cc}] para {gn}SIM{cc}\n'))
-    if ask == 1:
-        idade = 0
+    while True:
+        ask = int(input(f'Deseja continuar?\n[{rd}0{cc}] para {rd}NÃO{cc} ou [{gn}1{cc}] para {gn}SIM{cc}\n'))
+        if ask >= 0 and ask <=1:
+            break
+        else:
+            ask = 0
     if ask == 0:
         break
+    else:
+        idade = 0
 # Encerramento
 print(emoji.emojize(f'Número de pessoas {yw}Maiores de 18 anos{cc}: {we}{idacont}{cc}\nNúmero de {be}Homens{cc}: {we}{homcont}{cc}\nNúmero de {pk}Mulheres com Menos de 20 anos{cc}: {we}{mulcont}{cc}',use_aliases=True))

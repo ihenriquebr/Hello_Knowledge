@@ -26,43 +26,45 @@ while True:
     else:
         escolha = 'ÍMPAR'
     if par == 2 or par == 3:
-        mao = int(input(emoji.emojize(f'Digite [{co}0{cc}] para escolher {co}ZERO{cc} :fist: OU [{co}1{cc}] para escolher {co}UM{cc} :point_up:\n',use_aliases=True)))
-        if mao == 0 or mao == 1:
-            print(mao, maokalista)
-            if mao == 0:
-                emao = ':fist:'
-            elif mao == 1:
-                emao = ':point_up: '
-            if maokalista == 0:
-                emaokali = ':fist:'
-            elif maokalista == 1:
-                emaokali = ':point_up:'
-            print(emoji.emojize(f'Você escolheu {escolha} com a mão {emao} e eu escolhi {emaokali}',use_aliases=True))
-            sleep(1)
-            print('Acho que...')
-            sleep(1.5)
-            if par == 2:
-                if mao == 0 and maokalista == 0:
-                    print(emoji.emojize(f'Você {gn}ganhou{cc}... {random.choice(sadmojis)}  Quero revanche!',use_aliases=True))
-                    cont += 1
-                elif mao == 1 and maokalista == 1:
-                    print(emoji.emojize(f'Você {gn}ganhou{cc}... {random.choice(sadmojis)}  Quero revanche!',use_aliases=True))
-                    cont += 1
-                else:
-                    print(emoji.emojize(f'Você {rd}perdeu{cc}!! {random.choice(hapmojis)}',use_aliases=True))
-                    break
-            elif par == 3:
-                if mao == 0 and maokalista == 1:
-                    print(emoji.emojize(f'Você {gn}ganhou{cc}... {random.choice(sadmojis)}  Quero revanche!',use_aliases=True))
-                    cont += 1
-                elif mao == 1 and maokalista == 0:
-                    print(emoji.emojize(f'Você {gn}ganhou{cc}... {random.choice(sadmojis)}  Quero revanche!',use_aliases=True))
-                    cont += 1
-                else:
-                    print(emoji.emojize(f'Você {rd}perdeu{cc}!! {random.choice(hapmojis)}',use_aliases=True))
-                    break
-        else:
-            print(f'{rd}Erro! Você digitou errado!{cc}')
+        while True:
+            mao = int(input(emoji.emojize(f'Digite [{co}0{cc}] para escolher {co}ZERO{cc} :fist: OU [{co}1{cc}] para escolher {co}UM{cc} :point_up:\n',use_aliases=True)))
+            if mao == 0 or mao == 1:
+                break
+            else:
+                print(f'{rd}Erro! Você digitou errado!{cc}')
+                mao = 0
+        if mao == 0:
+            emao = ':fist:'
+        elif mao == 1:
+            emao = ':point_up: '
+        if maokalista == 0:
+            emaokali = ':fist:'
+        elif maokalista == 1:
+            emaokali = ':point_up:'
+        print(emoji.emojize(f'Você escolheu {escolha} com a mão {emao} e eu escolhi {emaokali}',use_aliases=True))
+        sleep(1)
+        print('Acho que...')
+        sleep(1.5)
+        if par == 2:
+            if mao == 0 and maokalista == 0:
+                print(emoji.emojize(f'Você {gn}ganhou{cc}... {random.choice(sadmojis)}  Quero revanche!',use_aliases=True))
+                cont += 1
+            elif mao == 1 and maokalista == 1:
+                print(emoji.emojize(f'Você {gn}ganhou{cc}... {random.choice(sadmojis)}  Quero revanche!',use_aliases=True))
+                cont += 1
+            else:
+                print(emoji.emojize(f'Você {rd}perdeu{cc}!! {random.choice(hapmojis)}',use_aliases=True))
+                break
+        elif par == 3:
+            if mao == 0 and maokalista == 1:
+                print(emoji.emojize(f'Você {gn}ganhou{cc}... {random.choice(sadmojis)}  Quero revanche!',use_aliases=True))
+                cont += 1
+            elif mao == 1 and maokalista == 0:
+                print(emoji.emojize(f'Você {gn}ganhou{cc}... {random.choice(sadmojis)}  Quero revanche!',use_aliases=True))
+                cont += 1
+            else:
+                print(emoji.emojize(f'Você {rd}perdeu{cc}!! {random.choice(hapmojis)}',use_aliases=True))
+                break       
     else:
         print(f'{rd}Erro! Você digitou errado!{cc}')
 # Encerramento
