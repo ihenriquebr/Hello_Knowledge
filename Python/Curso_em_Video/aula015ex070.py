@@ -27,19 +27,12 @@ while True:
         contMil += 1
     # Menor preço
     cont += 1
-    if cont == 1:
+    if cont == 1 or preco < menor:
         menor = preco
         barato = produto
-    else:
-        if preco < menor:
-            barato = ''
-            menor = preco
-            barato = produto
-        else:
-            menor = menor
     # Continuar?
     while True:
-        stop = str(input(f'{we}Continuar?{cc}\n[{rd}N{cc}] para {rd}NÃO{cc} OU [{gn}S{cc}] para {gn}SIM{cc}\n')).strip()
+        stop = str(input(f'{we}Continuar?{cc}\n[{rd}N{cc}] para {rd}NÃO{cc} OU [{gn}S{cc}] para {gn}SIM{cc}\n')).strip()[0]
         if stop in "sSnN":
             break
     if stop in "nN":

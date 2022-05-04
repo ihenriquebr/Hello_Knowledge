@@ -28,6 +28,8 @@ while True:
     if par == 2 or par == 3:
         while True:
             mao = int(input(emoji.emojize(f'Digite [{co}0{cc}] para escolher {co}ZERO{cc} :fist: OU [{co}1{cc}] para escolher {co}UM{cc} :point_up:\n',use_aliases=True)))
+            soma = mao + maokalista
+            print(soma)
             if mao == 0 or mao == 1:
                 break
             else:
@@ -41,27 +43,24 @@ while True:
             emaokali = ':fist:'
         elif maokalista == 1:
             emaokali = ':point_up:'
+        print(mao, maokalista)
         print(emoji.emojize(f'{we}VOCÊ{cc} escolheu {we}{escolha}{cc} com a mão {emao}{cc} e {we}EU{cc} escolhi {emaokali}',use_aliases=True))
         sleep(1)
         print('Acho que...')
         sleep(1.5)
         if par == 2:
-            if mao == 0 and maokalista == 0:
+            if soma % 2 == 0:
                 print(emoji.emojize(f'Você {gn}ganhou{cc}... {random.choice(sadmojis)}  {we}Quero revanche!{cc}',use_aliases=True))
                 cont += 1
-            elif mao == 1 and maokalista == 1:
-                print(emoji.emojize(f'Você {gn}ganhou{cc}... {random.choice(sadmojis)}  {we}Quero revanche!{cc}',use_aliases=True))
-                cont += 1
+                soma = 0
             else:
                 print(emoji.emojize(f'Você {rd}perdeu{cc}!! {random.choice(hapmojis)}',use_aliases=True))
                 break
         elif par == 3:
-            if mao == 0 and maokalista == 1:
+            if soma % 2 != 0:
                 print(emoji.emojize(f'Você {gn}ganhou{cc}... {random.choice(sadmojis)}  {we}Quero revanche!{cc}',use_aliases=True))
                 cont += 1
-            elif mao == 1 and maokalista == 0:
-                print(emoji.emojize(f'Você {gn}ganhou{cc}... {random.choice(sadmojis)}  {we}Quero revanche!{cc}',use_aliases=True))
-                cont += 1
+                soma = 0
             else:
                 print(emoji.emojize(f'Você {rd}perdeu{cc}!! {random.choice(hapmojis)}',use_aliases=True))
                 break       

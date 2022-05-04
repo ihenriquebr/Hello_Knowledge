@@ -1,6 +1,7 @@
 # Módulos
 import emoji
 # Cores
+rd = '\033[1;31m'
 be = '\033[1;34m'
 gn = '\033[1;32m'
 we = '\033[1m'
@@ -8,6 +9,7 @@ cc = '\033[m'
 # Abertura
 print(emoji.emojize(':heavy_plus_sign: Soma de Números :heavy_plus_sign:',use_aliases=True))
 # Estruturas
+print(f'Digite [{rd}999{cc}] para {rd}PARAR{cc}')
 n = s = c = 0
 while True:
     n = int(input(f'{cc}Número:{we} '))

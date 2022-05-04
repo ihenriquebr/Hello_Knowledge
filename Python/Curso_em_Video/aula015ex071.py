@@ -8,11 +8,7 @@ cc = '\033[m'
 # Abertura
 print(emoji.emojize(f':bank: :money_with_wings: {bgn} Caixa Eletrônico {cc} :money_with_wings: :bank:',use_aliases=True))
 # Estruturas
-nota50 = 0
-nota20 = 0
-nota10 = 0
-nota1 = 0
-dinheiro = 0
+nota50 = nota20 = nota10 = nota1 = dinheiro = 0
 dinheiro = int(input('Valor a ser sacado: R$ \033[4m'))
 sleep(.5)
 while True:
@@ -34,7 +30,7 @@ while True:
         nota1 += 1
     if dinheiro == 0:
         break
-# Encerramento
+# Condições
 if nota50 > 0:
     print(f'{cc}{we}{nota50}{cc} {"cédula" if nota50 == 1 else "cédulas"} de \033[1;32mR$ 50{cc}')
 if nota20 > 0:
@@ -44,4 +40,5 @@ if nota10 > 0:
 if nota1  > 0:
     print(f'{cc}{we}{nota1}{cc} {"cédula" if nota1 == 1 else "cédulas"} de \033[1;34mR$ 1{cc}')
 sleep(2)
-print(emoji.emojize(f'O {bgn} Caixa Eletrônico {cc} agredece por sua atividade!:wink:',use_aliases=True))
+# Encerramento
+print(emoji.emojize(f'{we}O {cc}{bgn} Caixa Eletrônico {cc} {we}agredece por sua atividade!{cc}:wink:',use_aliases=True))

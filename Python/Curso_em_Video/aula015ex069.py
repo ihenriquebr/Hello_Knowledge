@@ -12,10 +12,7 @@ cc = '\033[m'
 # Abertura
 print(emoji.emojize(f':underage: {bwe} Idade e Sexo {cc} :transgender_symbol:',use_aliases=True))
 # Variáveis
-idade = 0
-idacont = 0
-homcont = 0
-mulcont = 0
+idade = idacont = homcont = mulcont = 0
 # Estruturas
 while True:
     # Idade
@@ -29,7 +26,10 @@ while True:
             idade = 0        
     # Sexo
     while True:
-        sexo = int(input(emoji.emojize(f'{we}Sexo{cc}:\n[{pk}0{cc}] para {pk}Feminino :female_sign:{cc}\n[{be}1{cc}] para {be}Masculino :male_sign:{cc}\n',use_aliases=True)))
+        while True:
+            sexo = int(input(emoji.emojize(f'{we}Sexo{cc}:\n[{pk}0{cc}] para {pk}Feminino :female_sign:{cc}\n[{be}1{cc}] para {be}Masculino :male_sign:{cc}\n',use_aliases=True)))
+            if sexo == 0 or sexo == 1:
+                break
         if sexo >= 0 and sexo <= 1:
             if sexo == 1:
                 homcont += 1
