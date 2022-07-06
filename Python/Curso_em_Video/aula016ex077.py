@@ -1,16 +1,18 @@
 # Módulos
 import emoji
 # Cores
+ue = '\033[4m'
+rd = '\033[1;31m'
+we = '\033[1m'
 bgy = '\033[1;47m'
 cc = '\033[m'
 # Abertura
 print(emoji.emojize(f':capital_abcd: {bgy} Palavras e Vogais {cc} :a:',use_aliases=True))
 # Tupla
-palavras = ('APRENDER', 'PROGRAMAR', 'MNB')
+palavras = ('APRENDER', 'PROGRAMAR', 'LINGUAGEM', 'PYTHON', 'CURSO', 'GRATIS', 'ESTUDAR', 'PRATICAR', 'TRABALHAR', 'MERCADO', 'PROGRAMADOR', 'FUTURO')
 # Estruturas
-
 for a in palavras:
-    print(f'A palavra {a} tem as vogais: ',end='')
+    print(f'A palavra {we}{a}{cc} tem as {ue}vogais{cc}:{rd} ',end='')
     cont = 0
     for b in a:
         if b == "A":
@@ -33,5 +35,6 @@ for a in palavras:
     if cont == 0:
         print('não há vogais nesta palavra.')
     cont = 0
-    print('')
-# todo terminar as palavras
+    print(cc)
+# Encerramento
+print(emoji.emojize(f'{we}Espero ter sanado a sua dúvida!{cc} :wink:',use_aliases=True))
